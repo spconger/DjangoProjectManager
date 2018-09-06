@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Current Projects</h2>
+<ul class="group-list">
+{% for ProjectDef in project_list %}
+<li class="list-group-item"><a href="{% url 'detail' id=ProjectDef.id %}">{{ProjectDef.projectname}}<a></li>
+{% endfor %}
+{% endblock %}
