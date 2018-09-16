@@ -5,4 +5,6 @@
 {% for ProjectDef in project_list %}
 <li class="list-group-item"><a href="{% url 'detail' id=ProjectDef.id %}">{{ProjectDef.projectname}}<a></li>
 {% endfor %}
+</ul>
+<p><a href="{% url 'newproject' %}">new Project</a></p>
 {% endblock %}

@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from task import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('task/', views.index, name='index'),
-    path('task/<int:id>', views.detail, name='detail')
-    #path('', include('task.urls'))
+    #path('task/', views.index, name='index'),
+    #path('task/<int:id>', views.detail, name='detail'),
+    #path('task/', views.newproject, name='newproject'),
+    path('task/', include('task.urls')),
 ]
