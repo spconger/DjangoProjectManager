@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Work logs</h2>
+<table class='table'>
+    <tr>
+        <th>Project</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Explantion</th>
+        <th>Total time</th>
+    </tr>
+{% for WorkLog in log_list %}
+<tr>
+    <td>{{WorkLog.project_id}}</td>
+    <td>{{WorkLog.start}}</td>
+    <td>{{WorkLog.end}}</td>
+    <td>{{WorkLog.workdescription}}</td>
+    <td>{{WorkLog.CalculateTime}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import ProjectDef
+from .models import ProjectDef, WorkLog
 from .forms import ProjectDefForm, WorkLogForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -12,6 +12,10 @@ def index(request):
 def detail(request, id):
     proj=get_object_or_404(ProjectDef, pk=id)
     return render(request, 'task/detail.html',{'proj': proj})
+
+def logs(request):
+    log_list=WorkLog.objects.all()
+    return render(request, 'task/logs.html', {'log_list': log_list})
 
 #class ProjectCreate(CreateView):
    # model=ProjectDef
