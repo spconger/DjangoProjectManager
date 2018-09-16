@@ -8,3 +8,5 @@
 <p>Also moved Urls from project level to application level.</p>
 <p><strong>#Third Commit</strong></p>
 <p>For this commit I have revised the workform view so that it now saves</p>
+<p><strong>#Fourth Commit</strong></p>
+<p>I have added another view method for showing all the work logs and also called the method in WorkLog. Also changed the URL to add the new view, the base.html and a new template.</p>
