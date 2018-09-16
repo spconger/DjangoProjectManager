@@ -33,7 +33,7 @@ def newproject(request):
 def worktimes(request):
     form=WorkLogForm()
     if request.method=='POST':
-        form=ProjectDefForm(request.POST)
+        form=WorkLogForm(request.POST)
         if form.is_valid():
             post=form.save(commit=True)
             post.save()
