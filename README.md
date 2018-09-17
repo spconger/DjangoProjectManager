@@ -10,3 +10,5 @@
 <p>For this commit I have revised the workform view so that it now saves</p>
 <p><strong>#Fourth Commit</strong></p>
 <p>I have added another view method for showing all the work logs and also called the method in WorkLog. Also changed the URL to add the new view, the base.html and a new template.</p>
+<p><strong>#Fifth Commit</strong></p>
+<p>For this commit I added Login and logout features and made the new project and worklog forms accessible only for those who are logged in.</p>
