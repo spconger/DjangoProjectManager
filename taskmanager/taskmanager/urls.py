@@ -20,8 +20,6 @@ from task import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('task/', views.index, name='index'),
-    #path('task/<int:id>', views.detail, name='detail'),
-    #path('task/', views.newproject, name='newproject'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('task/', include('task.urls')),
 ]

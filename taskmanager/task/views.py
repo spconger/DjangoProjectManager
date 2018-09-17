@@ -3,6 +3,7 @@ from .models import ProjectDef, WorkLog
 from .forms import ProjectDefForm, WorkLogForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -20,7 +21,7 @@ def logs(request):
 #class ProjectCreate(CreateView):
    # model=ProjectDef
     #fields='__all__'
-
+@login_required
 def newproject(request):
     form=ProjectDefForm()
     
@@ -30,10 +31,11 @@ def newproject(request):
             
             post=form.save(commit=True)
             post.save()
-        else:
-            form=ProjectDefForm()
+    else:
+        form=ProjectDefForm()
     return render(request, 'task/newproject.html', {'form': form})
-
+    
+@login_required
 def worktimes(request):
     form=WorkLogForm()
     if request.method=='POST':
@@ -45,3 +47,9 @@ def worktimes(request):
         else:
             form=WorkLogForm()
     return render(request, 'task/worktimes.html', {'form': form})
+   
+def logoutmessage(request):
+    return render(request, 'task/logoutmessage.html')
+
+def loginmessage(request):
+    return render(request, 'task/loginmessage.html')
